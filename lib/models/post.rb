@@ -13,8 +13,8 @@ module WechatForum
     property :updated_at, DateTime
 
     belongs_to :user
-    has 1, :audio, WechatForum::Attachment, :type => :audio
-    has n, :images, WechatForum::Attachment, :type => :image
+    has 1, :audio, WechatForum::Attachment, type: :audio, constraint: :destroy
+    has n, :images, WechatForum::Attachment, type: :image, constraint: :destroy
 
     class Entity < Grape::Entity
       expose :id, :title, :description, :user_openid
