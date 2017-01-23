@@ -1,4 +1,4 @@
-require_relative 'post'
+require_relative 'user_post'
 
 module WechatForum
   module Api

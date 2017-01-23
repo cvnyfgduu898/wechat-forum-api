@@ -1,4 +1,5 @@
 require_relative 'api/user'
+require_relative 'api/post'
 require 'grape-swagger'
 
 module WechatForum
