@@ -1,5 +1,6 @@
 require_relative 'api/user'
 require_relative 'api/post'
+require_relative 'api/signature'
 require 'grape-swagger'
 
 module WechatForum
@@ -12,6 +13,7 @@ module WechatForum
       header 'Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Api-Key'
     end
 
+    mount Api::Signature
     mount Api::User
     mount Api::Post
 
