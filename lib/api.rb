@@ -9,6 +9,8 @@ module WechatForum
     prefix :api
 
     before do
+      error!('Unauthorized, invalid Api-Key', 401) unless headers['Api-Key'] == ENV['API_KEY']
+
       header 'Access-Control-Allow-Origin', '*'
       header 'Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Api-Key'
     end
